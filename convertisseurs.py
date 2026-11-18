@@ -22,7 +22,7 @@ class JsonVersCsv:
         if not donnees:
             return ""
         sortie = io.StringIO()
-        ecrivain = csv.DictWriter(sortie, fieldnames=donnees[0].keys())
+        ecrivain = csv.DictWriter(sortie, fieldnames=donnees[0].keys(), lineterminator="\n")
         ecrivain.writeheader()
         ecrivain.writerows(donnees)
         return sortie.getvalue()
